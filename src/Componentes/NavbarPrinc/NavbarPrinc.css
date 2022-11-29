@@ -1,11 +1,10 @@
 
-
-div img {
+.Enrutado img{
     width: 50px;
     position: relative;
     position: relative;
     border-radius: 100%;
-    right:300px
+    right:0px
     
 
 }

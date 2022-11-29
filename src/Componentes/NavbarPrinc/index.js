@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import DibujoNav from '../Carrito/DibujoNav'
 
 
+
 const NavbarPrinc=()=>{
     return (
         <div>    <div className='Enrutado'><ul className='ulenrutado'>
@@ -14,7 +15,7 @@ const NavbarPrinc=()=>{
 					</NavLink></li>
 
             <li>	<NavLink className="hover-underline-animation" to="/Nosotros">
-                        <a>Nosotros</a>
+                        Nosotros
 					</NavLink></li>
 
 
@@ -23,7 +24,7 @@ const NavbarPrinc=()=>{
 					</NavLink></li>
 
 
-            <li>	<NavLink className="hover-underline-animation" to="/Productos">
+            <li>	<NavLink className="hover-underline-animation" to="/ItemList">
                           Productos
 					</NavLink></li>
 
