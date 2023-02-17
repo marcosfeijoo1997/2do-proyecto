@@ -22,6 +22,9 @@ const NavbarPrinc=()=>{
             <li>	<NavLink className="hover-underline-animation" to="/Servicios">
                              Servicios
 					</NavLink></li>
+                    <NavLink className="nav__link" to="/categoria/mesas">
+							Mesas
+						</NavLink>
 
 
             <li>	<NavLink className="hover-underline-animation" to="/ItemList">

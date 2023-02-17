@@ -1,3 +1,10 @@
 .ItemList img{
     width: 520px;
 }
+.Select {
+    width: 400px;
+}
+.caños {
+    height: 100px;
+  font-size: large;
+}
