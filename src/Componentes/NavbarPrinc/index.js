@@ -5,6 +5,7 @@ import DibujoNav from '../Carrito/DibujoNav'
 
 
 
+
 const NavbarPrinc=()=>{
     return (
         <div>    <div className='Enrutado'><ul className='ulenrutado'>
@@ -22,12 +23,10 @@ const NavbarPrinc=()=>{
             <li>	<NavLink className="hover-underline-animation" to="/Servicios">
                              Servicios
 					</NavLink></li>
-                    <NavLink className="nav__link" to="/categoria/mesas">
-							Mesas
-						</NavLink>
+                   
 
 
-            <li>	<NavLink className="hover-underline-animation" to="/ItemList">
+            <li>	<NavLink className="hover-underline-animation" to="/Categorias">
                           Productos
 					</NavLink></li>
 

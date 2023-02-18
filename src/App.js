@@ -11,6 +11,7 @@ import Servicios from './Componentes/ItemsNav/Servicios';
 import CarritoContainer from './Componentes/Carrito/CarritoContainer';
 import Footer from './Componentes/Footer/Footer';
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
+import Categorias from './Componentes/Categorias/Index';
 
 
 /*fin*/
@@ -26,9 +27,9 @@ function App() {
   <Routes>
 <Route path='/' element={<Inicio/>}/>
 <Route path='/Nosotros' element={<Nosotros/>}/>
-<Route path='/ItemList' element={<ItemList/>}/>
+<Route path='/Categorias' element={<Categorias/>}/>
 <Route
-						path="/categoria/:categoriaId"
+						path="/Categorias/:categoriaId"
 						element={<ItemListContainer />}
 					/>
 <Route path='/Servicios' element={<Servicios/>}/>

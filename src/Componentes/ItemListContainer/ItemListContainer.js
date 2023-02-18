@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList2 from "../ItemList2/ItemList2";
+import ItemList from "../ItemList/ItemList";
 
 import {
 	collection,
@@ -14,13 +14,13 @@ import {
 // 2- Crear un puntero al dato que queremos traer
 // 3- Traer el dato con una promesa
 
-export const ItemListContainer = ({ texto }) => {
+export const ItemListContainer =({ texto }) => {
 	const [data, setData] = useState([]);
 	const { categoriaId } = useParams();
 
 	useEffect(() => {
 		const querydb = getFirestore();
-		const queryCollection = collection(querydb, "Mesas");
+		const queryCollection = collection(querydb, "products");
 		if (categoriaId) {
 			const queryFilter = query(
 				queryCollection,
@@ -43,7 +43,8 @@ export const ItemListContainer = ({ texto }) => {
 	return (
 		<>
 			
-			<ItemList2 data={data} />
+			<div>soy ItemListContainer</div>
+			<ItemList data={data} />
 		</>
 	);
 };
