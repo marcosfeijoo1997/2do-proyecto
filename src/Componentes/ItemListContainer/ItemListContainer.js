@@ -20,7 +20,7 @@ export const ItemListContainer =({ texto }) => {
 
 	useEffect(() => {
 		const querydb = getFirestore();
-		const queryCollection = collection(querydb, "products");
+		const queryCollection = collection(querydb, "Productos");
 		if (categoriaId) {
 			const queryFilter = query(
 				queryCollection,
@@ -39,6 +39,7 @@ export const ItemListContainer =({ texto }) => {
 			);
 		}
 	}, [categoriaId]);
+	console.log(data,)
 
 	return (
 		<>
