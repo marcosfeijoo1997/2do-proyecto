@@ -6,15 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 /*todas las rutas*/
 import Inicio from './Componentes/ItemsNav/Inicio';
 import Nosotros from './Componentes/ItemsNav/Nosotros';
-import ItemList from './Componentes/ItemList/ItemList'
 import Servicios from './Componentes/ItemsNav/Servicios';
 import CarritoContainer from './Componentes/Carrito/CarritoContainer';
 import Footer from './Componentes/Footer/Footer';
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import Categorias from './Componentes/Categorias/Index';
+import ItemDetailContainer from './Componentes/ItemDetail/ItemDetailContainer'
 
-
-/*fin*/
 
 
 function App() {
@@ -31,6 +29,10 @@ function App() {
 <Route
 						path="/Categorias/:categoriaId"
 						element={<ItemListContainer />}
+					/>
+     <Route
+						path="/detalle/:detalleId"
+						element={<ItemDetailContainer/>}
 					/>
 <Route path='/Servicios' element={<Servicios/>}/>
 <Route path='/Carrito' element={<CarritoContainer/>}/>

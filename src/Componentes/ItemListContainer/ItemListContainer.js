@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
+
 import {
 	collection,
 	getDocs,
@@ -10,9 +11,6 @@ import {
 	where,
 } from "firebase/firestore";
 
-// 1- Traer el servicio de firestore
-// 2- Crear un puntero al dato que queremos traer
-// 3- Traer el dato con una promesa
 
 export const ItemListContainer =({ texto }) => {
 	const [data, setData] = useState([]);
@@ -39,13 +37,16 @@ export const ItemListContainer =({ texto }) => {
 			);
 		}
 	}, [categoriaId]);
-	console.log(data,)
 
+if (data.length<3) {
+	return (<div>Cargando...</div>)
+
+}else {setTimeout(3000)}
 	return (
 		<>
-			
-			<div>soy ItemListContainer</div>
+
 			<ItemList data={data} />
+
 		</>
 	);
 };
