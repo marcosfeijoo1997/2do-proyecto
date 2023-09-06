@@ -1,6 +1,10 @@
 .slider{
     width: 50%;
+
+    top: 150px;
+    left: 50px;
 }
 .select {
     margin-left: 1%;
+    
 }
