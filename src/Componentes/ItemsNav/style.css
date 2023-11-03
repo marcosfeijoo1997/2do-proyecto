@@ -23,8 +23,8 @@
     opacity: 1;
    color: rgb(255, 255, 255,1);
    font-weight: 500;
-   font-size:50px ;
-   z-index: 5;
+   font-size:5vw;
+   z-index: 3;
    justify-content: center;
    margin: auto; 
    width: 100%;
@@ -36,4 +36,20 @@
  
  
     
+}
+.nosotros {
+    width: 60%;
+    margin: auto;
+}
+.nosotros h1 {
+    font-size: 5vh;
+    font-weight: 700;
+    color: brown;
+
+}
+.nosotros h2 {
+    margin-top:5% ;
+    font-size: 3vh;
+    font-weight: 500;
+    color: brown;
 }

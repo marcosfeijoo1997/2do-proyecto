@@ -7,10 +7,79 @@ import DibujoNav from '../Carrito/DibujoNav'
 
 
 const NavbarPrinc=()=>{
+   
+
+  
+  
+    /*navigation menuToggle checkbox animation*/
     return (
-        <div>    <div className='Enrutado'><ul className='ulenrutado'>
-       
-           <img src={logo}></img>
+        <div>   
+            
+            
+             <div className='menuMovile'>
+            <nav role="navigation" className='navigation'>
+    <div id="menuToggle">
+    <input type="checkbox" />
+
+    <span></span>
+    <span></span>
+    <span></span>
+ 
+    
+    
+  
+    <ul id="menu" className='menu'>
+    <div className="dropdown elemento-desplegable">
+    <li>	<NavLink className="hover-underline-animation" to="/">
+						Inicio 
+					</NavLink></li>
+ 
+</div>
+
+<div className="dropdown">
+<li>	<NavLink className="hover-underline-animation" to="/Nosotros">
+                        Nosotros
+					</NavLink></li>
+
+
+                      </div>
+                      <div className="dropdown">
+                    
+                  
+            <li>	<NavLink className="hover-underline-animation" to="/Servicios">
+                             Servicios
+                             
+					</NavLink></li>
+                   
+
+               
+                    </div>
+                              <div className="dropdown">
+           
+                              <li>	<NavLink className="hover-underline-animation" to="/Categorias">
+                          Productos
+					</NavLink></li>
+                    
+
+</div>
+                  
+         
+    
+    </ul>
+  
+
+  </div>
+
+
+</nav></div>
+<li className='cart'><NavLink to="/Carrito"><DibujoNav/>
+                          
+                          </NavLink></li>
+
+            
+            <div className='route'><ul>
+       <li>
+           <img src={logo} alt='img'></img></li>
            <li>	<NavLink className="hover-underline-animation" to="/">
 						Inicio
 					</NavLink></li>
@@ -22,6 +91,7 @@ const NavbarPrinc=()=>{
 
             <li>	<NavLink className="hover-underline-animation" to="/Servicios">
                              Servicios
+                             
 					</NavLink></li>
                    
 
@@ -30,7 +100,7 @@ const NavbarPrinc=()=>{
                           Productos
 					</NavLink></li>
 
-                    <li><NavLink className="NoUnderline" to="/Carrito"><DibujoNav/>
+                    <li><NavLink to="/Carrito"><DibujoNav/>
                           
 					</NavLink></li>
 

@@ -1,0 +1,32 @@
+.cartContainer {
+   
+    width: 60%;
+    margin: auto;
+    padding: 0px;
+    display:grid;
+    grid-template-columns:25% 25% 25% 25%;
+
+}
+.cartContainer div {
+    justify-content: center;
+    margin: auto;
+}
+.cartContainer img {
+    width: 50%;
+}
+.contador {
+   
+   display: flex;
+    border:1px solid rgba(0,0,0,.1);
+
+
+
+
+}
+.contador p{
+margin: auto;
+}
+.contador button {
+    border:hidden;
+    background-color: white;
+}

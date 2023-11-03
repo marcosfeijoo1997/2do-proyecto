@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react'
+import React, {useEffect } from 'react'
 import './style.css'
 import { useState } from 'react'
+import ItemCount from '../Carrito/ItemCount';
+import { useCartContext } from '../../CartContext/CartProvider';
+
+
+
 const ItemDetail = ({data}) => {
 
+   
+const {count,addProduct}=useCartContext()
+const onAdd=(quantity,precioFinal)=>{
+  addProduct(data,quantity,precioFinal)
+}
 
-  
+
   const ManodeObra=data.title==='Patas'?13000:18500
   const cañoCuarentaVeinte=9.82
   const cañoSesentaVeinte=20.14
@@ -32,6 +42,7 @@ const ItemDetail = ({data}) => {
   const [selectedValue, setSelectedValue] = useState(9.82);
   const [largoValue, setLargoValue] = useState(9.82);
   if (data.title==='Mesa de patas rectangulares') {
+    const precioFinal=(Math.ceil((cañoLargo*data.largo*largoValue+cañoAncho*data.ancho*selectedValue+cañoAlto*data.alto*selectedValue+ManodeObra)/500))*500
   const handleSelectChange = (event) => {
     const newValue = parseFloat(event.target.value);
     setSelectedValue(newValue);
@@ -106,8 +117,10 @@ const ItemDetail = ({data}) => {
     
     
 <p>Mano de obra {ManodeObra}</p>
-    <h1>Precio total redondeado:${(Math.ceil((cañoLargo*data.largo*largoValue+cañoAncho*data.ancho*selectedValue+cañoAlto*data.alto*selectedValue+ManodeObra)/500))*500}</h1>
-    
+    <h1>Precio total redondeado:${precioFinal}</h1>
+    <button className="agregar" onClick={()=>onAdd(count,precioFinal)}>AÑADIR AL CARRITO</button>
+    <div><ItemCount/></div>
+
     </div>
     
 
@@ -118,6 +131,7 @@ const ItemDetail = ({data}) => {
   
   if (data.title==='Patas') {
     
+    const precioFinal=(Math.ceil(((Math.sqrt(cañoAlto**2+cañoAncho**2))*4*selectedValue+cañoLargo*2*largoValue+ManodeObra)/500))*500
     const handleSelectChange = (event) => {
       const newValue = parseFloat(event.target.value);
       setSelectedValue(newValue);
@@ -194,7 +208,10 @@ const ItemDetail = ({data}) => {
       
       
   <p>Mano de obra {ManodeObra}</p>
-      <h1>Precio total redondeado:${(Math.ceil(((Math.sqrt(cañoAlto**2+cañoAncho**2))*4*selectedValue+cañoLargo*2*largoValue+ManodeObra)/500))*500}</h1>
+      <h1>Precio total redondeado:${precioFinal}</h1>
+      <div><ItemCount/></div>
+
+      <button className="agregar" onClick={()=>onAdd(count,precioFinal)}>AÑADIR AL CARRITO</button>
    
       </div>
       
@@ -204,6 +221,7 @@ const ItemDetail = ({data}) => {
     )
     }
     if (data.title==='Mesa en X') {
+      const precioFinal=(Math.ceil(((Math.sqrt(cañoAlto**2+cañoAncho**2))*4*selectedValue+cañoLargo*2*largoValue+ManodeObra)/500))*500
       const handleSelectChange = (event) => {
         const newValue = parseFloat(event.target.value);
         setSelectedValue(newValue);
@@ -228,6 +246,7 @@ const ItemDetail = ({data}) => {
        }
     
       return (
+        
         <div><h1>{data.titulo}</h1>
         <img src={data.image} alt={data.image}/>
         <br/>
@@ -278,7 +297,12 @@ const ItemDetail = ({data}) => {
         
         
     <p>Mano de obra {ManodeObra}</p>
-        <h1>Precio total redondeado:${(Math.ceil(((Math.sqrt(cañoAlto**2+cañoAncho**2))*4*selectedValue+cañoLargo*2*largoValue+ManodeObra)/500))*500}</h1>
+        <h1>Precio total redondeado:${precioFinal}</h1>
+
+        <div><ItemCount/></div>
+
+        <button className="agregar" onClick={()=>onAdd(count,precioFinal)}>AÑADIR AL CARRITO</button>
+   
    
         </div>
         

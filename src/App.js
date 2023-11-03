@@ -12,16 +12,19 @@ import Footer from './Componentes/Footer/Footer';
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import Categorias from './Componentes/Categorias/Index';
 import ItemDetailContainer from './Componentes/ItemDetail/ItemDetailContainer'
+import CartProvider from './CartContext/CartProvider';
 
 
 
 function App() {
-  return (<div className="App">
+  
+  return (<div className="App"><>
     <BrowserRouter>
+ 
+ <CartProvider>
  <Navbar/>
  <NavbarPrinc/>
-
-
+ 
   <Routes>
 <Route path='/' element={<Inicio/>}/>
 <Route path='/Nosotros' element={<Nosotros/>}/>
@@ -37,9 +40,11 @@ function App() {
 <Route path='/Servicios' element={<Servicios/>}/>
 <Route path='/Carrito' element={<CarritoContainer/>}/>
     </Routes>
+    </CartProvider>
+ 
     <Footer/>
 </BrowserRouter>
-
+</>
 
     </div>
     /*En productos tengo que meter una ruta dinámica*/
